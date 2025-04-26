@@ -4,105 +4,8 @@
     <meta charset="UTF-8">
     <title>Real-Time Emergency Alerts</title>
 
-    <style>
-        /* Make the body yellow and center everything vertically */
-        body {
-            background-color: #FFEB3B;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        /* Style for the black bar*/
-        .header {
-            background-color: black;
-            color: #FFEB3B;
-            width: 100%;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-         /* Style for the Client ID text */
-        .client-id {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: black;
-            text-align: center;
-        }
-
-         /* Style for the chat box */
-        #chat-box {
-            background-color: black;
-            color: white;
-            width: 90%;
-            max-width: 800px;
-            height: 400px;
-            margin-top: 20px;
-            padding: 20px;
-            overflow-y: auto;
-            border: 5px solid black;
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
-
-        /* Style for each individual chat message */
-        .message {
-            background-color: #424242;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        /* Style for input box and send button */
-        .input-area {
-            margin-top: 20px;
-            width: 90%;
-            max-width: 800px;
-            display: flex;
-            gap: 10px;
-        }
-        input[type="text"] {
-            flex-grow: 1;
-            padding: 15px;
-            font-size: 16px;
-            border: 2px solid black;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        /* Style the Send button */
-        button {
-            background-color: black;
-            color: #FFEB3B;
-            padding: 15px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-         /* Style for button hover effect */
-        button:hover {
-            background-color: #333;
-        }
-
-        /* Style for the emergency icon*/
-        .icon {
-            font-size: 36px;
-        }
-    </style>
+    <!-- Link to style.css -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
@@ -162,7 +65,7 @@
             }
         }
     
-        // Press "Enter" key to send message
+        // Press"Enter" key to send message
         input.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 sendMessage();
