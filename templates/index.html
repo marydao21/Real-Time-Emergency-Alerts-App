@@ -5,6 +5,7 @@
     <title>Real-Time Emergency Alerts</title>
 
     <style>
+        /* Make the body yellow and center everything vertically */
         body {
             background-color: #FFEB3B;
             margin: 0;
@@ -16,6 +17,7 @@
             align-items: center;
             justify-content: flex-start;
         }
+        /* Style for the black bar*/
         .header {
             background-color: black;
             color: #FFEB3B;
@@ -29,7 +31,7 @@
             justify-content: center;
             gap: 15px;
         }
-        /* NEW: Client ID style */
+         /* Style for the Client ID text */
         .client-id {
             margin-top: 20px;
             font-size: 24px;
@@ -37,6 +39,8 @@
             color: black;
             text-align: center;
         }
+
+         /* Style for the chat box */
         #chat-box {
             background-color: black;
             color: white;
@@ -50,6 +54,8 @@
             border-radius: 10px;
             box-sizing: border-box;
         }
+
+        /* Style for each individual chat message */
         .message {
             background-color: #424242;
             margin-bottom: 10px;
@@ -57,6 +63,8 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
+        /* Style for input box and send button */
         .input-area {
             margin-top: 20px;
             width: 90%;
@@ -72,6 +80,8 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
+
+        /* Style the Send button */
         button {
             background-color: black;
             color: #FFEB3B;
@@ -82,9 +92,13 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+         /* Style for button hover effect */
         button:hover {
             background-color: #333;
         }
+
+        /* Style for the emergency icon*/
         .icon {
             font-size: 36px;
         }
@@ -93,6 +107,7 @@
 
 <body>
 
+<!-- CONTENT -->
     <!-- Top header -->
     <div class="header">
         <span class="icon">🚨</span>
@@ -100,7 +115,7 @@
         <span class="icon">🚨</span>
     </div>
 
-    <!-- NEW: Client ID text appears here -->
+    <!-- Client ID text appears -->
     <div class="client-id">Client #<span id="client-id">...</span> Connected</div>
 
     <!-- Chat area -->
@@ -113,27 +128,33 @@
     </div>
 
     <script>
+        // Open a WebSocket connection to server
         const ws = new WebSocket(`ws://${location.host}/ws`);
     
+        // Get references to chat box, input box, clientId
         const chatBox = document.getElementById('chat-box');
         const input = document.getElementById('messageInput');
         const clientIdSpan = document.getElementById('client-id');
     
+        // When server sends a message
         ws.onmessage = (event) => {
             const message = event.data;
     
+            // If message is client ID
             if (message.startsWith("ID: ")) {
                 const clientId = message.slice(4).trim();
-                clientIdSpan.textContent = clientId; // Only update the number inside the <span>
+                clientIdSpan.textContent = clientId; // only update the number inside the <span>
+            // if it's a chat message, display it in chat box
             } else {
                 const messageDiv = document.createElement('div');
                 messageDiv.className = "message";
                 messageDiv.textContent = message;
                 chatBox.appendChild(messageDiv);
-                chatBox.scrollTop = chatBox.scrollHeight;
+                chatBox.scrollTop = chatBox.scrollHeight; //always scroll to latest message
             }
         };
     
+        // Send message to server when "Send" button clicked
         function sendMessage() {
             if (input.value.trim() !== "") {
                 ws.send(input.value.trim());
@@ -141,6 +162,7 @@
             }
         }
     
+        // Press "Enter" key to send message
         input.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 sendMessage();
