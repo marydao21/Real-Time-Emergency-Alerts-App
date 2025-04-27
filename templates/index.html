@@ -18,8 +18,8 @@
         <span class="icon">🚨</span>
     </div>
 
-    <!-- Client ID text appears -->
-    <div class="client-id">Client #<span id="client-id">...</span> Connected</div>
+    <!-- User ID text appears -->
+    <div class="user-id">User #<span id="user-id">...</span> Connected</div>
 
     <!-- Chat area -->
     <div id="chat-box"></div>
@@ -34,19 +34,19 @@
         // Open a WebSocket connection to server
         const ws = new WebSocket(`ws://${location.host}/ws`);
     
-        // Get references to chat box, input box, clientId
+        // Get references to chat box, input box, userId
         const chatBox = document.getElementById('chat-box');
         const input = document.getElementById('messageInput');
-        const clientIdSpan = document.getElementById('client-id');
+        const userIdSpan = document.getElementById('user-id');
     
         // When server sends a message
         ws.onmessage = (event) => {
             const message = event.data;
     
-            // If message is client ID
+            // If message is user ID
             if (message.startsWith("ID: ")) {
-                const clientId = message.slice(4).trim();
-                clientIdSpan.textContent = clientId; // only update the number inside the <span>
+                const userId = message.slice(4).trim();
+                userIdSpan.textContent = userId; // only update the number inside the <span>
             // if it's a chat message, display it in chat box
             } else {
                 const messageDiv = document.createElement('div');
